@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetInspector", "DotNetInspector\DotNetInspector.csproj", "{EEA8B5BD-D61F-436F-B5EB-87924A318F4C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompareAndDelete", "CompareAndDelete\CompareAndDelete.csproj", "{5C1DF476-17C1-47E1-861C-B1AF3440756F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EEA8B5BD-D61F-436F-B5EB-87924A318F4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEA8B5BD-D61F-436F-B5EB-87924A318F4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEA8B5BD-D61F-436F-B5EB-87924A318F4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C1DF476-17C1-47E1-861C-B1AF3440756F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C1DF476-17C1-47E1-861C-B1AF3440756F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C1DF476-17C1-47E1-861C-B1AF3440756F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C1DF476-17C1-47E1-861C-B1AF3440756F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
