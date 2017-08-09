@@ -16,8 +16,9 @@ namespace CompareDelete
             string sourcePath = @"C:\repos\IOT_Bakeoff\Simulator\EdgeContainer\iot-edge";
             string fileListFile = @"c:\tools\filesCopied.csv";
 
-            CompareAndDeleteCore(sourcePath, referencePathCore);
-            //CompareAndCopyMLModuleCode(sourcePath, referencePathMLModule, fileListFile);
+
+            //CompareAndDeleteCore(sourcePath, referencePathCore);
+            //CompareAndCreateMLModuleCodeFileList(sourcePath, referencePathMLModule, fileListFile);
             CopyMLFilesToTarget(sourcePath, referencePathMLModule, fileListFile);
             //RemoveMLModuleUniqueFiles(sourcePath, fileListFile);
 
@@ -48,14 +49,15 @@ namespace CompareDelete
             {
                 string fileName = Path.GetFileName(s);
                 string target = src + Path.DirectorySeparatorChar + fileName;
+                //string target = @"D:\" + fileName;
 
-                File.Copy(s, target);
+                File.Copy(s, target, true);
             }
 
             Console.WriteLine(String.Format("{0} Files copied", fileList.Length));
         }
 
-        public static void CompareAndCopyMLModuleCode(string src, string refPath, string fileListFile)
+        public static void CompareAndCreateMLModuleCodeFileList(string src, string refPath, string fileListFile)
         {
             IEnumerable<string> refFiles = Directory.EnumerateFiles(refPath);
             List<string> fileList = new List<string>();
@@ -71,7 +73,9 @@ namespace CompareDelete
 
         public static void CompareAndDeleteCore(string src, string refPath)
         {
+            string missingFile = "libuv.dll";
             IEnumerable<string> refFiles = Directory.EnumerateFiles(refPath);
+            int numFilesDeleted = 0;
             foreach (string file in refFiles)
             {
                 string fName = Path.GetFileName(file);
@@ -80,8 +84,13 @@ namespace CompareDelete
                 {
                     Console.WriteLine(String.Format("{0} is a duplicate", cPath));
                     File.Delete(cPath);
+                    numFilesDeleted++;
                 }
             }
+            Console.WriteLine("Number of files deleted: " + numFilesDeleted);
+
+            //Copy one file needed
+            File.Copy(refPath + Path.DirectorySeparatorChar + missingFile, src + Path.DirectorySeparatorChar + missingFile);
         }
     }
 }
