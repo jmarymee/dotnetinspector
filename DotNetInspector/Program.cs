@@ -14,6 +14,8 @@ namespace DotNetInspectorGadget
 
             string assembly = @"C:\Users\jmarymee\stage\stage2\System.ComponentModel.TypeConverter.dll";
 
+            string assemblyFile = @"C:\Users\jmarymee\Documents\Visual Studio 2017\Projects\iotedgeml\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll";
+
             InspectAnAssembly(assembly);
 
             FindThatDependency(srcPath, assemplyName);
